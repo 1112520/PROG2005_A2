@@ -12,16 +12,29 @@
     <p>PROG2005 Assignment 2 Part 1</p>
     <hr>
 
-    <!-- 功能区域 -->
-    <div id="app">
-      <p>System ready. Waiting for operations...</p>
+    <!-- 添加物品表单 -->
+    <div class="form-container">
+      <h3>Add New Item</h3>
+
+      <input type="text" id="itemId" placeholder="Item ID (unique)">
+      <input type="text" id="itemName" placeholder="Item Name">
+      <input type="text" id="category" placeholder="Category (Electronics/Furniture/Clothing/Tools/Miscellaneous)">
+      <input type="number" id="quantity" placeholder="Quantity">
+      <input type="number" id="price" placeholder="Price">
+      <input type="text" id="supplierName" placeholder="Supplier Name">
+      <input type="text" id="stockStatus" placeholder="Stock Status (In Stock/Low Stock/Out of Stock)">
+      <label>
+        <input type="checkbox" id="isPopular"> Popular Item
+      </label>
+      <textarea id="comment" placeholder="Comment (optional)"></textarea>
+
+      <button id="addBtn">Add Item</button>
     </div>
 
     <!-- 展示区域 -->
     <div id="output"></div>
   </div>
 
-  <!-- 加载 TS 编译后的 JS -->
   <script src="app.js"></script>
 </body>
 </html>
