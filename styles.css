@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   background: white;
   padding: 24px;
@@ -45,7 +45,7 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 input, textarea {
@@ -69,6 +69,16 @@ button:hover {
   background: #1a66d2;
 }
 
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
 #output {
   margin-top: 20px;
   padding: 16px;
@@ -83,11 +93,33 @@ label {
   gap: 8px;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 16px;
   }
   h1 {
     font-size: 20px;
+  }
+  .button-group {
+    flex-direction: column;
   }
 }
