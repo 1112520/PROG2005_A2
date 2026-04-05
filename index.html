@@ -3,34 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventory System - Part 1</title>
+  <title>Inventory System - Part 1 | PROG2005</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>Inventory Management System</h1>
-    <p>PROG2005 Assignment 2 Part 1</p>
+    <p>PROG2005 Assignment 2 - Part 1 (TypeScript)</p>
+    <p class="hd-mark">HD Version | Completed</p>
     <hr>
 
-    <!-- 添加/编辑表单 -->
+    <!-- Form Section -->
     <div class="form-container">
       <h3>Add / Edit Item</h3>
       <input type="text" id="itemId" placeholder="Item ID (unique)">
       <input type="text" id="itemName" placeholder="Item Name">
-      <input type="text" id="category" placeholder="Category (Electronics/Furniture/Clothing/Tools/Miscellaneous)">
+      <input type="text" id="category" placeholder="Category: Electronics/Furniture/Clothing/Tools/Miscellaneous">
       <input type="number" id="quantity" placeholder="Quantity">
       <input type="number" id="price" placeholder="Price">
       <input type="text" id="supplierName" placeholder="Supplier Name">
-      <input type="text" id="stockStatus" placeholder="Stock Status (In Stock/Low Stock/Out of Stock)">
+      <input type="text" id="stockStatus" placeholder="Stock Status: In Stock/Low Stock/Out of Stock">
       <label>
-        <input type="checkbox" id="isPopular"> Popular Item
+        <input type="checkbox" id="isPopular"> Mark as Popular Item
       </label>
       <textarea id="comment" placeholder="Comment (optional)"></textarea>
-      <button id="addBtn">Add Item</button>
-      <button id="editBtn">Edit Item</button>
+      <div class="form-buttons">
+        <button id="addBtn">Add Item</button>
+        <button id="editBtn">Edit Item</button>
+      </div>
     </div>
 
-    <!-- 功能按钮 -->
+    <!-- Control Buttons -->
     <div class="button-group">
       <button id="showAllBtn">Show All Items</button>
       <button id="showPopularBtn">Show Popular Items</button>
@@ -38,12 +41,12 @@
       <button id="deleteBtn">Delete by ID</button>
     </div>
 
-    <!-- 搜索/删除输入 -->
+    <!-- Input Box -->
     <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Enter name to search / ID to delete">
+      <input type="text" id="searchInput" placeholder="Enter name to search / Enter ID to delete">
     </div>
 
-    <!-- 输出区域 -->
+    <!-- Output Area -->
     <div id="output"></div>
   </div>
 
