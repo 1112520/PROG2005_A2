@@ -1,1 +1,49 @@
-<p>search works!</p>
+<div class="search-container">
+  <h2>Search Inventory (HD)</h2>
+
+  <!-- 搜索栏 -->
+  <div class="search-bar">
+    <input
+      [(ngModel)]="searchText"
+      placeholder="Search by ID or Name..."
+      class="search-input"
+    />
+
+    <select [(ngModel)]="selectedCategory" class="category-select">
+      <option value="">All Categories</option>
+      @for (cat of categories; track cat) {
+        <option [value]="cat">{{cat}}</option>
+      }
+    </select>
+  </div>
+
+  <!-- 结果列表 -->
+  <div class="result-card">
+    <h3>Results ({{filteredItems.length}})</h3>
+
+    @if (filteredItems.length === 0) {
+      <p class="no-result">No items found</p>
+    }
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+      @for (item of filteredItems; track item.itemId) {
+      <tr>
+        <td>{{item.itemId}}</td>
+        <td>{{item.itemName}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.quantity}}</td>
+        <td>${{item.price.toFixed(2)}}</td>
+        <td>{{item.stockStatus}}</td>
+      </tr>
+      }
+    </table>
+  </div>
+</div>
