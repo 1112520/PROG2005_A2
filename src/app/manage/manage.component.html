@@ -1,1 +1,61 @@
-<p>manage works!</p>
+<div class="manage-container">
+  <h2>Manage Inventory (HD)</h2>
+
+  <div class="form-card">
+    <h3>Add New Item</h3>
+    <div class="form-row">
+      <input [(ngModel)]="itemId" placeholder="Item ID" required />
+      <input [(ngModel)]="itemName" placeholder="Item Name" required />
+    </div>
+
+    <div class="form-row">
+      <select [(ngModel)]="category">
+        @for (cat of categories; track cat) {
+          <option [value]="cat">{{cat}}</option>
+        }
+      </select>
+
+      <input type="number" [(ngModel)]="quantity" placeholder="Quantity" />
+      <input type="number" [(ngModel)]="price" placeholder="Price" />
+    </div>
+
+    <div class="form-row">
+      <input [(ngModel)]="supplierName" placeholder="Supplier" />
+      <select [(ngModel)]="stockStatus">
+        @for (s of statuses; track s) {
+          <option [value]="s">{{s}}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>
+        <input type="checkbox" [(ngModel)]="isPopular" /> Popular
+      </label>
+      <input [(ngModel)]="comment" placeholder="Comment (optional)" />
+    </div>
+
+    <button class="btn-add" (click)="addItem()">Add Item</button>
+  </div>
+
+  <div class="list-card">
+    <h3>Inventory List ({{inventoryService.getItems().length}})</h3>
+    <table>
+      <tr>
+        <th>ID</th><th>Name</th><th>Category</th><th>Qty</th><th>Price</th><th>Action</th>
+      </tr>
+      @for (item of inventoryService.getItems(); track item.itemId) {
+      <tr>
+        <td>{{item.itemId}}</td>
+        <td>{{item.itemName}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.quantity}}</td>
+        <td>${{item.price.toFixed(2)}}</td>
+        <td>
+          <button class="btn-del" (click)="deleteItem(item.itemId)">Delete</button>
+        </td>
+      </tr>
+      }
+    </table>
+  </div>
+</div>

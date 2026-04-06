@@ -1,0 +1,60 @@
+.manage-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.form-card, .list-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input, select {
+  padding: 0.6rem;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.btn-add {
+  background: #2d7ff9;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-del {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+th {
+  background: #2d7ff9;
+  color: white;
+}
